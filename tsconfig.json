@@ -22,5 +22,8 @@
     "forceConsistentCasingInFileNames": true,
   },
   "include": ["src", "vite.config.ts"],
+  "exclude": [
+    "jest_cache"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
