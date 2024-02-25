@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/app/app';
+import App from './components/appComponent/appComponent';
 
 const Settings = {
   placesCount: 312,
