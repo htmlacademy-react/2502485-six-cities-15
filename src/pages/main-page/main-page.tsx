@@ -1,4 +1,4 @@
-import Header from '../../components/headerComponent/headerComponent';
+import Header from '../../components/header/header';
 import Tabs from './tabs/tabs';
 import PlaceCard from '../../components/place-card/place-card';
 
