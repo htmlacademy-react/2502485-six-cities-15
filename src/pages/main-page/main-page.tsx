@@ -1,6 +1,6 @@
-import Header from '../../components/Header/Header';
-import Tabs from '../MainPage/Tabs/Tabs';
-import PlaceCard from '../../components/PlaceCard/PlaceCard';
+import Header from '../../components/header/header';
+import Tabs from './tabs/tabs';
+import PlaceCard from '../../components/place-card/place-card';
 
 type MainPageProps = {
   placesCount: number;

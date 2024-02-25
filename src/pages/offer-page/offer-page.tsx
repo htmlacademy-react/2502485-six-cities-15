@@ -1,5 +1,5 @@
-import Header from '../../components/Header/Header';
-import PlaceCard from '../../components/PlaceCard/PlaceCard';
+import Header from '../../components/header/header';
+import PlaceCard from '../../components/place-card/place-card';
 
 function OfferPage (): JSX.Element{
   return(
