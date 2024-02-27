@@ -1,9 +1,16 @@
 import Header from '../../components/header/header';
 import PlaceCard from '../../components/place-card/place-card';
+import { Helmet } from 'react-helmet-async';
+// import { useParams } from 'react-router-dom';
 
 function OfferPage (): JSX.Element{
+  // const params = useParams();
+
   return(
     <div className="page">
+      <Helmet>
+        <title>6 cities. Offer</title>
+      </Helmet>
       <Header />
 
       <main className="page__main page__main--offer">
