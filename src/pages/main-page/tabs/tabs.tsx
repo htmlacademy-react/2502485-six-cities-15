@@ -31,7 +31,7 @@ function Tabs(): JSX.Element{
             </Link>
           </li>
           <li className="locations__item">
-            <Link className="locations__item-link tabs__item" href="#">
+            <Link className="locations__item-link tabs__item" to="/">
               <span>Dusseldorf</span>
             </Link>
           </li>
