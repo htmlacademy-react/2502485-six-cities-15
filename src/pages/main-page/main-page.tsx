@@ -1,6 +1,7 @@
 import Header from '../../components/header/header';
 import Tabs from './tabs/tabs';
 import PlaceCard from '../../components/place-card/place-card';
+import { Helmet } from 'react-helmet-async';
 
 type MainPageProps = {
   placesCount: number;
@@ -9,6 +10,9 @@ type MainPageProps = {
 function MainPage ({placesCount}: MainPageProps): JSX.Element{
   return(
     <div className="page page--gray page--main">
+      <Helmet>
+        <title>6 cities</title>
+      </Helmet>
       <Header />
 
       <main className="page__main page__main--index">
