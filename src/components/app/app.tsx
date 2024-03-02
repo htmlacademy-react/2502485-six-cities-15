@@ -7,19 +7,28 @@ import FavoritesPage from '../../pages/favorites-page/favorites-page';
 import OfferPage from '../../pages/offer-page/offer-page';
 import PageNotFound from '../../pages/page-not-found/page-not-found';
 import { HelmetProvider } from 'react-helmet-async';
+import { TOfferCard, TOffer } from '../../type';
 
 type AppProps = {
   placesCount: number;
+  offerCards: TOfferCard[];
+  offers: TOffer[];
+  nearbyOfferCards: TOfferCard[];
 }
 
-function App ({placesCount}: AppProps): JSX.Element{
+function App ({placesCount, offerCards, offers, nearbyOfferCards}: AppProps): JSX.Element{
   return(
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<MainPage placesCount={placesCount} />}
+            element={
+              <MainPage
+                placesCount={placesCount}
+                offerCards = {offerCards}
+              />
+            }
           />
           <Route
             path={AppRoute.Login}
@@ -35,7 +44,12 @@ function App ({placesCount}: AppProps): JSX.Element{
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferPage />}
+            element={
+              <OfferPage
+                offers={offers}
+                nearbyOfferCards={nearbyOfferCards}
+              />
+            }
           />
           <Route
             path="*"

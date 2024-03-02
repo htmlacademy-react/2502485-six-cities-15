@@ -1,17 +1,20 @@
+import React from 'react';
 import Header from '../../components/header/header';
 import Tabs from './tabs/tabs';
 import PlaceCard from '../../components/place-card/place-card';
 import { Helmet } from 'react-helmet-async';
+import { TOfferCard } from '../../type';
 
 type MainPageProps = {
   placesCount: number;
+  offerCards: TOfferCard[];
 }
 
-function MainPage ({placesCount}: MainPageProps): JSX.Element{
+function MainPage ({ placesCount, offerCards }: MainPageProps): JSX.Element{
   return(
     <div className="page page--gray page--main">
       <Helmet>
-        <title>6 cities</title>
+        <title>6 cities. Main</title>
       </Helmet>
       <Header />
 
@@ -39,11 +42,13 @@ function MainPage ({placesCount}: MainPageProps): JSX.Element{
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
-                <PlaceCard />
+                {
+                  offerCards.map((offerCard)=>(
+                    <React.Fragment key={offerCard.id}>
+                      <PlaceCard offerCard={offerCard} />
+                    </React.Fragment>
+                  ))
+                }
               </div>
             </section>
             <div className="cities__right-section">
