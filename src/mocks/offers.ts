@@ -1,4 +1,4 @@
-import { TOfferCard, TOffer } from '../type';
+import { TOfferCard, TOffer } from '../types';
 
 export const offerCards: TOfferCard[] = [
   {
@@ -132,8 +132,8 @@ export const offers: TOffer[] = [
       'Fridge'
     ],
     host: {
-      'name': 'Oliver Conner',
-      'avatarUrl': 'https://url-to-image/image.png',
+      'name': 'Angelina',
+      'avatarUrl': 'img/avatar-angelina.jpg',
       'isPro': false
     },
     images: [
@@ -144,7 +144,7 @@ export const offers: TOffer[] = [
       'img/apartment-02.jpg',
       'img/apartment-03.jpg'
     ],
-    maxAdults: 4
+    maxAdults: 1
   },
   {
     id: '2',
@@ -177,9 +177,9 @@ export const offers: TOffer[] = [
       'Coffee machine'
     ],
     host: {
-      'name': 'Oliver Conner',
-      'avatarUrl': 'https://url-to-image/image.png',
-      'isPro': false
+      'name': 'Angelina',
+      'avatarUrl': 'img/avatar-angelina.jpg',
+      'isPro': true
     },
     images: [
       'img/room.jpg',
@@ -222,8 +222,8 @@ export const offers: TOffer[] = [
       'Fridge'
     ],
     host: {
-      'name': 'Oliver Conner',
-      'avatarUrl': 'https://url-to-image/image.png',
+      'name': 'Angelina',
+      'avatarUrl': 'img/avatar-angelina.jpg',
       'isPro': false
     },
     images: [
@@ -264,9 +264,9 @@ export const offers: TOffer[] = [
       'Fridge'
     ],
     host: {
-      'name': 'Oliver Conner',
-      'avatarUrl': 'https://url-to-image/image.png',
-      'isPro': false
+      'name': 'Angelina',
+      'avatarUrl': 'img/avatar-angelina.jpg',
+      'isPro': true
     },
     images: [
       'img/apartment-03.jpg',

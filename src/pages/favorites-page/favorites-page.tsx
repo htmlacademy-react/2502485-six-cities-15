@@ -25,8 +25,8 @@ function FavoritesPage (): JSX.Element{
                   </div>
                 </div>
                 <div className="favorites__places">
-                  <PlaceCard />
-                  <PlaceCard />
+                  {/* <PlaceCard />
+                  <PlaceCard /> */}
                 </div>
               </li>
 
@@ -39,7 +39,7 @@ function FavoritesPage (): JSX.Element{
                   </div>
                 </div>
                 <div className="favorites__places">
-                  <PlaceCard />
+                  {/* <PlaceCard /> */}
                 </div>
               </li>
             </ul>
