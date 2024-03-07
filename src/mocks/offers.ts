@@ -19,7 +19,7 @@ export const offerCards: TOfferCard[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     rating: 4,
     previewImage: 'img/apartment-01.jpg'
@@ -42,7 +42,7 @@ export const offerCards: TOfferCard[] = [
       longitude: 4.673877537499948,
       zoom: 8
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 3,
     previewImage: 'img/room.jpg'
@@ -350,3 +350,97 @@ export const nearbyOfferCards: TOfferCard[] = [
   }
 ];
 
+export const favoriteOffers: TOfferCard[] = [
+  {
+    id: '1',
+    title: 'Beautiful & luxurious apartment at great location',
+    type: 'apartment',
+    price: 120,
+    city: {
+      name: 'Amsterdam',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      }
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavorite: true,
+    isPremium: false,
+    rating: 4,
+    previewImage: 'img/apartment-01.jpg'
+  },
+  {
+    id: '2',
+    title: 'Beautiful & luxurious room at great location',
+    type: 'room',
+    price: 120,
+    city: {
+      name: 'Amsterdam',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      }
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavorite: true,
+    isPremium: true,
+    rating: 3,
+    previewImage: 'img/room.jpg'
+  },
+  {
+    id: '3',
+    title: 'Beautiful & luxurious house at great location',
+    type: 'house',
+    price: 120,
+    city: {
+      name: 'Cologne',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      }
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavorite: true,
+    isPremium: true,
+    rating: 2,
+    previewImage: 'img/apartment-02.jpg'
+  },
+  {
+    id: '4',
+    title: 'Beautiful & luxurious hotel at great location',
+    type: 'hotel',
+    price: 120,
+    city: {
+      name: 'Dusseldorf',
+      location: {
+        latitude: 52.35514938496378,
+        longitude: 4.673877537499948,
+        zoom: 8
+      }
+    },
+    location: {
+      latitude: 52.35514938496378,
+      longitude: 4.673877537499948,
+      zoom: 8
+    },
+    isFavorite: true,
+    isPremium: false,
+    rating: 4,
+    previewImage: 'img/apartment-03.jpg'
+  },
+];

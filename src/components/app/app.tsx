@@ -14,10 +14,11 @@ type AppProps = {
   offerCards: TOfferCard[];
   offers: TOffer[];
   nearbyOfferCards: TOfferCard[];
+  favoriteOffers: TOfferCard[];
 }
 
-function App ({placesCount, offerCards, offers, nearbyOfferCards}: AppProps): JSX.Element{
-  const authorizationStatus = AuthorizationStatus.NoAuth;
+function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers}: AppProps): JSX.Element{
+  const authorizationStatus = AuthorizationStatus.Auth;
 
   return(
     <HelmetProvider>
@@ -40,7 +41,7 @@ function App ({placesCount, offerCards, offers, nearbyOfferCards}: AppProps): JS
             path={AppRoute.Favorites}
             element={
               <PrivateRoute authorizationStatus={authorizationStatus}>
-                <FavoritesPage />
+                <FavoritesPage favoriteOffers={favoriteOffers} />
               </PrivateRoute>
             }
           />

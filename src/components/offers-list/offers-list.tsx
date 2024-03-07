@@ -11,7 +11,7 @@ type OffersListProprs = {
 }
 
 function OffersList ({ placesCount, offerCards }: OffersListProprs):JSX.Element{
-  const [activeOffercard, setActiveOfferCard] = useState<Nullable<TOfferCard>>(null);
+  const [activeOfferCard, setActiveOfferCard] = useState<Nullable<TOfferCard>>(null);
   const handleHover = (offerCard?: TOfferCard) => {
     setActiveOfferCard(offerCard || null);
   };
