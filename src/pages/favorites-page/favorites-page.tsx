@@ -2,12 +2,42 @@ import Header from '../../components/header/header';
 import PlaceCard from '../../components/place-card/place-card';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { TOfferCard } from '../../types';
 
-function FavoritesPage (): JSX.Element{
+type FavoritesPageProps = {
+  favoriteOffers: TOfferCard[];
+}
+
+function FavoritesPage ({favoriteOffers}:FavoritesPageProps): JSX.Element{
+  const favoritesOffersGroupByCity = favoriteOffers.reduce<Record<string, TOfferCard[]>>((accumulator, currentValue) => {
+    accumulator[currentValue.city.name] = accumulator[currentValue.city.name] || [];
+    accumulator[currentValue.city.name].push(currentValue);
+    return accumulator;
+  }, {});
+  const favoritsOffersToDisplay = [];
+  for(const city in favoritesOffersGroupByCity){
+    favoritsOffersToDisplay.push(
+      <li key={city} className="favorites__locations-items">
+        <div className="favorites__locations locations locations--current">
+          <div className="locations__item locations__item-link">
+            <span>{city}</span>
+          </div>
+        </div>
+        <div className="favorites__places">
+          {
+            favoritesOffersGroupByCity[city].map((favoriteOfferCard:TOfferCard)=>(
+              <PlaceCard key={favoriteOfferCard.id} offerCard={favoriteOfferCard} isFavoritesPage />
+            ))
+          }
+        </div>
+      </li>
+    );
+  }
+
   return(
     <div className="page">
       <Helmet>
-        <title>6 cities</title>
+        <title>6 cities. Favorites</title>
       </Helmet>
       <Header />
 
@@ -16,32 +46,7 @@ function FavoritesPage (): JSX.Element{
           <section className="favorites">
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
-              <li className="favorites__locations-items">
-                <div className="favorites__locations locations locations--current">
-                  <div className="locations__item">
-                    <Link className="locations__item-link" to="/">
-                      <span>Amsterdam</span>
-                    </Link>
-                  </div>
-                </div>
-                <div className="favorites__places">
-                  <PlaceCard />
-                  <PlaceCard />
-                </div>
-              </li>
-
-              <li className="favorites__locations-items">
-                <div className="favorites__locations locations locations--current">
-                  <div className="locations__item">
-                    <Link className="locations__item-link" to="/">
-                      <span>Cologne</span>
-                    </Link>
-                  </div>
-                </div>
-                <div className="favorites__places">
-                  <PlaceCard />
-                </div>
-              </li>
+              {favoritsOffersToDisplay}
             </ul>
           </section>
         </div>

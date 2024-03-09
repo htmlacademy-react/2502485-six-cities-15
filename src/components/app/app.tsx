@@ -7,19 +7,30 @@ import FavoritesPage from '../../pages/favorites-page/favorites-page';
 import OfferPage from '../../pages/offer-page/offer-page';
 import PageNotFound from '../../pages/page-not-found/page-not-found';
 import { HelmetProvider } from 'react-helmet-async';
+import { TOfferCard, TOffer, TComment } from '../../types';
 
 type AppProps = {
-  placesCount: number;
+  offerCards: TOfferCard[];
+  offers: TOffer[];
+  nearbyOfferCards: TOfferCard[];
+  favoriteOffers: TOfferCard[];
+  comments: TComment[];
 }
 
-function App ({placesCount}: AppProps): JSX.Element{
+function App ({offerCards, offers, nearbyOfferCards, favoriteOffers, comments}: AppProps): JSX.Element{
+  const authorizationStatus = AuthorizationStatus.Auth;
+
   return(
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Main}
-            element={<MainPage placesCount={placesCount} />}
+            element={
+              <MainPage
+                offerCards = {offerCards}
+              />
+            }
           />
           <Route
             path={AppRoute.Login}
@@ -28,14 +39,21 @@ function App ({placesCount}: AppProps): JSX.Element{
           <Route
             path={AppRoute.Favorites}
             element={
-              <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-                <FavoritesPage />
+              <PrivateRoute authorizationStatus={authorizationStatus}>
+                <FavoritesPage favoriteOffers={favoriteOffers} />
               </PrivateRoute>
             }
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferPage />}
+            element={
+              <OfferPage
+                offers={offers}
+                nearbyOfferCards={nearbyOfferCards}
+                authorizationStatus={authorizationStatus}
+                comments={comments}
+              />
+            }
           />
           <Route
             path="*"

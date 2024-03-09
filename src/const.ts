@@ -1,5 +1,5 @@
 export const Settings = {
-  placesCount: 312,
+  maxRating: 5,
 };
 
 export enum AppRoute {
@@ -7,6 +7,7 @@ export enum AppRoute {
   Login = '/login',
   Favorites = '/favorites',
   Offer = '/offer/:id',
+  OfferPage = '/offer'
 }
 
 export enum AuthorizationStatus {
