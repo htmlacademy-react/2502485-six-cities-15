@@ -7,7 +7,7 @@ import FavoritesPage from '../../pages/favorites-page/favorites-page';
 import OfferPage from '../../pages/offer-page/offer-page';
 import PageNotFound from '../../pages/page-not-found/page-not-found';
 import { HelmetProvider } from 'react-helmet-async';
-import { TOfferCard, TOffer } from '../../types';
+import { TOfferCard, TOffer, TComment } from '../../types';
 
 type AppProps = {
   placesCount: number;
@@ -15,9 +15,10 @@ type AppProps = {
   offers: TOffer[];
   nearbyOfferCards: TOfferCard[];
   favoriteOffers: TOfferCard[];
+  comments: TComment[];
 }
 
-function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers}: AppProps): JSX.Element{
+function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers, comments}: AppProps): JSX.Element{
   const authorizationStatus = AuthorizationStatus.Auth;
 
   return(
@@ -52,6 +53,7 @@ function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers
                 offers={offers}
                 nearbyOfferCards={nearbyOfferCards}
                 authorizationStatus={authorizationStatus}
+                comments={comments}
               />
             }
           />
