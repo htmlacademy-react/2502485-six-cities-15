@@ -6,11 +6,10 @@ import { Helmet } from 'react-helmet-async';
 import { TOfferCard } from '../../types';
 
 type MainPageProps = {
-  placesCount: number;
   offerCards: TOfferCard[];
 }
 
-function MainPage ({ placesCount, offerCards }: MainPageProps): JSX.Element{
+function MainPage ({ offerCards }: MainPageProps): JSX.Element{
   return(
     <div className="page page--gray page--main">
       <Helmet>
@@ -22,7 +21,7 @@ function MainPage ({ placesCount, offerCards }: MainPageProps): JSX.Element{
         <h1 className="visually-hidden">Cities</h1>
         <Tabs />
         <div className="cities">
-          <OffersList placesCount={placesCount} offerCards={offerCards}/>
+          <OffersList placesCount={offerCards.length} offerCards={offerCards}/>
         </div>
       </main>
     </div>

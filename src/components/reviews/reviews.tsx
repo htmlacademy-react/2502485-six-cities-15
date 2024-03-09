@@ -1,4 +1,5 @@
 import ReviewForm from '../review-form/review-form';
+import { Settings } from '../../const';
 import { TComment } from '../../types';
 
 type ReviewsProps = {
@@ -18,12 +19,11 @@ function Reviews ({ isAuth, comments }: ReviewsProps):JSX.Element{
                   <img className="reviews__avatar user__avatar" src={comment.user.avatarUrl} width="54" height="54" alt="Reviews avatar" />
                 </div>
                 <span className="reviews__user-name">{comment.user.name}</span>
-                {/* {comment.isPro} */}
               </div>
               <div className="reviews__info">
                 <div className="reviews__rating rating">
                   <div className="reviews__stars rating__stars">
-                    <span style={{width: '80%'}}></span>
+                    <span style={{ width: `${comment.rating * (100 / Settings.maxRating)}%` }} />
                     <span className="visually-hidden">Rating</span>
                   </div>
                   {/* {comment.rating} */}

@@ -1,5 +1,5 @@
 export const Settings = {
-  placesCount: 312,
+  maxRating: 5,
 };
 
 export enum AppRoute {

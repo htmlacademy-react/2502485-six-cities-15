@@ -10,7 +10,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { TOfferCard, TOffer, TComment } from '../../types';
 
 type AppProps = {
-  placesCount: number;
   offerCards: TOfferCard[];
   offers: TOffer[];
   nearbyOfferCards: TOfferCard[];
@@ -18,7 +17,7 @@ type AppProps = {
   comments: TComment[];
 }
 
-function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers, comments}: AppProps): JSX.Element{
+function App ({offerCards, offers, nearbyOfferCards, favoriteOffers, comments}: AppProps): JSX.Element{
   const authorizationStatus = AuthorizationStatus.Auth;
 
   return(
@@ -29,7 +28,6 @@ function App ({placesCount, offerCards, offers, nearbyOfferCards, favoriteOffers
             path={AppRoute.Main}
             element={
               <MainPage
-                placesCount={placesCount}
                 offerCards = {offerCards}
               />
             }

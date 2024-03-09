@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { TOfferCard } from '../../types';
 import { AppRoute } from '../../const';
 import { capitalizeFirstLetter } from '../../utils';
+import { Settings } from '../../const';
 
 type PlaceCardProps = {
   offerCard: TOfferCard;
@@ -22,7 +23,10 @@ function PlaceCard ({ offerCard, handleHover, isFavoritesPage }: PlaceCardProps)
   };
 
   return(
-    <Link to={`${AppRoute.OfferPage}/${offerCard.id}`}>
+    <Link
+      to={`${AppRoute.OfferPage}/${offerCard.id}`}
+      className={`${isFavoritesPage ? 'favorites__card' : 'cities__card'} place-card`}
+    >
       <article
         className={`${isFavoritesPage ? 'favorites__card' : 'cities__card'} place-card`}
         onMouseEnter={handleMouseOn}
@@ -53,7 +57,7 @@ function PlaceCard ({ offerCard, handleHover, isFavoritesPage }: PlaceCardProps)
           </div>
           <div className="place-card__rating rating">
             <div className="place-card__stars rating__stars">
-              <span style={isFavoritesPage ? {width: '100%'} : {width: '80%'}}></span>
+              <span style={{ width: `${offerCard.rating * (100 / Settings.maxRating)}%` }} />
               <span className="visually-hidden">Rating</span>
             </div>
           </div>

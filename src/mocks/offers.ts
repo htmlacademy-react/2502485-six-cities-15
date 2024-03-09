@@ -355,7 +355,7 @@ export const favoriteOffers: TOfferCard[] = [
     id: '1',
     title: 'Beautiful & luxurious apartment at great location',
     type: 'apartment',
-    price: 120,
+    price: 100,
     city: {
       name: 'Amsterdam',
       location: {
@@ -378,7 +378,7 @@ export const favoriteOffers: TOfferCard[] = [
     id: '2',
     title: 'Beautiful & luxurious room at great location',
     type: 'room',
-    price: 120,
+    price: 80,
     city: {
       name: 'Amsterdam',
       location: {
@@ -401,7 +401,7 @@ export const favoriteOffers: TOfferCard[] = [
     id: '3',
     title: 'Beautiful & luxurious house at great location',
     type: 'house',
-    price: 120,
+    price: 75,
     city: {
       name: 'Cologne',
       location: {
@@ -440,7 +440,7 @@ export const favoriteOffers: TOfferCard[] = [
     },
     isFavorite: true,
     isPremium: false,
-    rating: 4,
+    rating: 5,
     previewImage: 'img/apartment-03.jpg'
   },
 ];

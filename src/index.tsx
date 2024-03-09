@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import { Settings } from './const';
 import { offerCards, offers, nearbyOfferCards, favoriteOffers } from './mocks/offers';
 import { comments } from './mocks/comments';
 
@@ -12,7 +11,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App
-      placesCount = {Settings.placesCount}
       offerCards = {offerCards}
       offers = {offers}
       nearbyOfferCards = {nearbyOfferCards}

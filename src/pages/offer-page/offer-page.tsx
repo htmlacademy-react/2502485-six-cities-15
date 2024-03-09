@@ -8,6 +8,7 @@ import { capitalizeFirstLetter } from '../../utils';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { TOffer, TOfferCard, TComment } from '../../types';
+import { Settings } from '../../const';
 
 type OfferPageProprs = {
   offers: TOffer[];
@@ -61,7 +62,7 @@ function OfferPage ({ offers, nearbyOfferCards, authorizationStatus, comments }:
               </div>
               <div className="offer__rating rating">
                 <div className="offer__stars rating__stars">
-                  <span style={{width: '80%'}}></span>
+                  <span style={{width: `${currentOffer.rating * (100 / Settings.maxRating)}%`}}></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
                 <span className="offer__rating-value rating__value">
