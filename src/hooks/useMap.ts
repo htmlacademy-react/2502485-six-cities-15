@@ -6,9 +6,6 @@ function useMap(mapRef: React.MutableRefObject<HTMLElement | null>, city: TCity)
   const [map, setMap] = useState<Map | null>(null);
   const isRenderedRef = useRef<boolean>(false);
 
-  console.log('mapRef-', mapRef)
-  console.log('city-', city)
-
   useEffect(() => {
     if (mapRef.current !== null && !isRenderedRef.current) {
       const instance = leaflet.map(mapRef.current, {

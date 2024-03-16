@@ -25,10 +25,7 @@ const currentCustomIcon = leaflet.icon({
 
 function Map ({offerCards, activeOfferCard}: MapProps): JSX.Element{
   const mapRef = useRef(null);
-  const map = useMap(mapRef, offerCards[0].city); //activeOfferCard.city
-
-  console.log('offerCards-', offerCards)
-  console.log('activeOfferCard-', activeOfferCard);
+  const map = useMap(mapRef, offerCards[0].city);
 
   useEffect(() => {
     if (map) {
@@ -46,7 +43,7 @@ function Map ({offerCards, activeOfferCard}: MapProps): JSX.Element{
   }, [map, offerCards, activeOfferCard]);
 
   return(
-    <section style={{height: '500px'}} ref={mapRef} />
+    <section className="cities__map map" style={{height: '100%', width: '100%'}} ref={mapRef} />
   );
 }
 
