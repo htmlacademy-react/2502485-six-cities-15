@@ -26,13 +26,13 @@ function OffersList ({ placesCount, offerCards }: OffersListProprs):JSX.Element{
         <div className="cities__places-list places__list tabs__content">
           {
             offerCards.map((offerCard)=>(
-              <PlaceCard key={offerCard.id} offerCard={offerCard} handleHover={handleHover}/>
+              <PlaceCard key={offerCard.id} offerCard={offerCard} handleHover={handleHover} />
             ))
           }
         </div>
       </section>
       <div className="cities__right-section">
-        <Map offerCards={offerCards} activeOfferCard={activeOfferCard}/>
+        <Map className="cities__map" offerCards={offerCards} activeOfferCard={activeOfferCard} />
       </div>
     </div>
   );
