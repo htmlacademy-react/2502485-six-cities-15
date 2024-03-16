@@ -1,5 +1,7 @@
 export const Settings = {
   maxRating: 5,
+  URL_MARKER_DEFAULT: './public/img/pin.svg',
+  URL_MARKER_CURRENT: './public/img/pin-active.svg',
 };
 
 export enum AppRoute {
