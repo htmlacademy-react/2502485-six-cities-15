@@ -1,7 +1,8 @@
 
-import {useState} from 'react';
+import { useState } from 'react';
 import PlaceCard from '../../components/place-card/place-card';
 import OffersSortingForm from '../../components/offers-sorting-form/offers-sorting-form';
+import Map from '../map/map';
 import { Nullable } from 'vitest';
 import { TOfferCard } from '../../types';
 
@@ -18,7 +19,6 @@ function OffersList ({ placesCount, offerCards }: OffersListProprs):JSX.Element{
 
   return(
     <div className="cities__places-container container">
-      {activeOfferCard && <span style={{display: 'none'}}>activeOfferCard</span>} {/*temporary */}
       <section className="cities__places places">
         <h2 className="visually-hidden">Places</h2>
         <b className="places__found">{placesCount} places to stay in Amsterdam</b>
@@ -32,7 +32,7 @@ function OffersList ({ placesCount, offerCards }: OffersListProprs):JSX.Element{
         </div>
       </section>
       <div className="cities__right-section">
-        <section className="cities__map map"></section>
+        <Map offerCards={offerCards} activeOfferCard={activeOfferCard}/>
       </div>
     </div>
   );

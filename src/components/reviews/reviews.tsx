@@ -26,7 +26,6 @@ function Reviews ({ isAuth, comments }: ReviewsProps):JSX.Element{
                     <span style={{ width: `${comment.rating * (100 / Settings.maxRating)}%` }} />
                     <span className="visually-hidden">Rating</span>
                   </div>
-                  {/* {comment.rating} */}
                 </div>
                 <p className="reviews__text">{comment.comment}</p>
                 <time className="reviews__time" dateTime="2019-04-24">
