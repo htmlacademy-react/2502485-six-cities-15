@@ -1,15 +1,15 @@
 import leaflet, { LayerGroup } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useRef, useEffect } from 'react';
-import { TOfferCard } from '../../types';
+import { TOfferCard, TOffer } from '../../types';
 import { Nullable } from 'vitest';
 import useMap from '../../hooks/useMap';
 import { Settings} from '../../const';
 
 type MapProps = {
   className: string;
-  offerCards: TOfferCard[];
-  activeOfferCard: Nullable<TOfferCard>;
+  offerCards: (TOffer|TOfferCard)[];
+  activeOfferCard: Nullable<TOfferCard|TOffer>;
 }
 
 const defaultCustomIcon = leaflet.icon({
