@@ -1,8 +1,8 @@
-import React from 'react';
 import Header from '../../components/header/header';
 import PlaceCard from '../../components/place-card/place-card';
 import PageNotFound from '../page-not-found/page-not-found';
 import Reviews from '../../components/reviews/reviews';
+import Map from '../../components/map/map';
 import { AuthorizationStatus } from '../../const';
 import { capitalizeFirstLetter } from '../../utils';
 import { Helmet } from 'react-helmet-async';
@@ -25,6 +25,7 @@ function OfferPage ({ offers, nearbyOfferCards, authorizationStatus, comments }:
     return <PageNotFound /> ;
   }
 
+  const nearbyOfferCardsPlusCurrent = [...nearbyOfferCards, currentOffer];
   const capacityTitle = `Max\u00a0${currentOffer.maxAdults}\u00a0${currentOffer.maxAdults > 1 ? 'adults' : 'adult'}`;
   const bedroomsTitle = `${currentOffer.bedrooms}\u00a0${currentOffer.bedrooms > 1 ? 'Bedrooms' : 'Bedroom'}`;
 
@@ -111,7 +112,7 @@ function OfferPage ({ offers, nearbyOfferCards, authorizationStatus, comments }:
               </section>
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map className="offer__map" offerCards={nearbyOfferCardsPlusCurrent} activeOfferCard={currentOffer} />
         </section>
         <div className="container">
           <section className="near-places places">
@@ -119,9 +120,7 @@ function OfferPage ({ offers, nearbyOfferCards, authorizationStatus, comments }:
             <div className="near-places__list places__list">
               {
                 nearbyOfferCards.map((offerCard)=>(
-                  <React.Fragment key={offerCard.id}>
-                    <PlaceCard offerCard={offerCard} />
-                  </React.Fragment>
+                  <PlaceCard key={offerCard.id} offerCard={offerCard} />
                 ))
               }
             </div>
